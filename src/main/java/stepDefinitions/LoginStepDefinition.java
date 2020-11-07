@@ -7,24 +7,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import utility.WebdriverSettings;
 
 public class LoginStepDefinition{
 
-	WebDriver driver;
+	static WebDriver driver;
 
-
-	@Given("^user is already on Login Page$")
-	public void user_already_on_login_page(){
-		System.setProperty("webdriver.chrome.driver", "driver//chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.get("https://www.freecrm.com/index.html");
-		driver.manage().window().maximize();
+	@Parameters("browser")
+	@Given("^user is already on Login Page \"([^\"]*)\"$")
+	public void user_is_already_on_Login_Page(String browser) throws Throwable {
+		driver = WebdriverSettings.driverSettings(browser);
 	}
-
 
 	@When("^title of login page is Free CRM$")
 	public void title_of_login_page_is_free_CRM(){

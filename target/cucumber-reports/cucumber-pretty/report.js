@@ -7,7 +7,13 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 3,
+  "comments": [
+    {
+      "line": 3,
+      "value": "#ctrl+Shift+F format"
+    }
+  ],
+  "line": 4,
   "name": "Free CRM Login Test Scenario",
   "description": "",
   "id": "free-crm-login-feature;free-crm-login-test-scenario",
@@ -16,7 +22,7 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 5,
-  "name": "user is already on Login Page",
+  "name": "user is already on Login Page \"\u003cbrowser\u003e\"",
   "keyword": "Given "
 });
 formatter.step({
@@ -45,7 +51,7 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 13,
+  "line": 12,
   "name": "",
   "description": "",
   "id": "free-crm-login-feature;free-crm-login-test-scenario;",
@@ -53,24 +59,26 @@ formatter.examples({
     {
       "cells": [
         "username",
-        "password"
+        "password",
+        "browser"
       ],
-      "line": 14,
+      "line": 13,
       "id": "free-crm-login-feature;free-crm-login-test-scenario;;1"
     },
     {
       "cells": [
         "naveenk",
-        "test@123"
+        "test@123",
+        "chrome"
       ],
-      "line": 15,
+      "line": 14,
       "id": "free-crm-login-feature;free-crm-login-test-scenario;;2"
     }
   ],
   "keyword": "Examples"
 });
 formatter.scenario({
-  "line": 15,
+  "line": 14,
   "name": "Free CRM Login Test Scenario",
   "description": "",
   "id": "free-crm-login-feature;free-crm-login-test-scenario;;2",
@@ -79,7 +87,10 @@ formatter.scenario({
 });
 formatter.step({
   "line": 5,
-  "name": "user is already on Login Page",
+  "name": "user is already on Login Page \"chrome\"",
+  "matchedColumns": [
+    2
+  ],
   "keyword": "Given "
 });
 formatter.step({
@@ -112,17 +123,23 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "LoginStepDefinition.user_already_on_login_page()"
+  "arguments": [
+    {
+      "val": "chrome",
+      "offset": 31
+    }
+  ],
+  "location": "LoginStepDefinition.user_is_already_on_Login_Page(String)"
 });
 formatter.result({
-  "duration": 20366519100,
+  "duration": 8322778000,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.title_of_login_page_is_free_CRM()"
 });
 formatter.result({
-  "duration": 19067700,
+  "duration": 31325100,
   "status": "passed"
 });
 formatter.match({
@@ -139,28 +156,28 @@ formatter.match({
   "location": "LoginStepDefinition.user_enters_username_and_password(String,String)"
 });
 formatter.result({
-  "duration": 12351891000,
+  "duration": 8638333200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_clicks_on_login_button()"
 });
 formatter.result({
-  "duration": 7586054800,
+  "duration": 6822423700,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.user_is_on_hopme_page()"
 });
 formatter.result({
-  "duration": 14184300,
+  "duration": 26141200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginStepDefinition.close_the_browser()"
 });
 formatter.result({
-  "duration": 814436600,
+  "duration": 856203800,
   "status": "passed"
 });
 });
