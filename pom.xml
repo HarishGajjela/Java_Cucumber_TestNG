@@ -57,11 +57,7 @@
 			<version>1.2.5</version>
 			<!-- <scope>test</scope> -->
 		</dependency>
-		<dependency>
-			<groupId>com.github.temyers</groupId>
-			<artifactId>cucumber-jvm-parallel-plugin</artifactId>
-			<version>2.1.0</version>
-		</dependency>
+
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-jvm-deps</artifactId>
@@ -111,12 +107,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.21.0</version>
 				<configuration>
-					<properties>
-						<property>
-							<name>dataproviderthreadcount</name>
-							<value>2</value>
-						</property>
-					</properties>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
