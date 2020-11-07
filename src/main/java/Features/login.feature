@@ -1,6 +1,5 @@
 Feature: Free CRM Login Feature
 
-  #ctrl+Shift+F format
   Scenario Outline: Free CRM Login Test Scenario
     Given user is already on Login Page "<browser>"
     When title of login page is Free CRM

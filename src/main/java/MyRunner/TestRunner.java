@@ -10,8 +10,6 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 
-
-
 @CucumberOptions(
         features = "src/main/java/Features",
         glue = {"stepDefinitions"},
@@ -24,6 +22,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         },plugin = "json:target/cucumber-reports/CucumberTestReport.json")
 
 public class TestRunner {
+	
     private TestNGCucumberRunner testNGCucumberRunner;
  
     @BeforeClass(alwaysRun = true)
@@ -31,7 +30,7 @@ public class TestRunner {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
  
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features")
+    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features",invocationCount=15)
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }
