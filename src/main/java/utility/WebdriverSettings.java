@@ -16,6 +16,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class WebdriverSettings {
 
 	public static WebDriver driver;
@@ -51,10 +53,12 @@ public class WebdriverSettings {
 			driver = new InternetExplorerDriver();
 
 		} else if (browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "driver//chromedriver.exe");
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("--headless");
-			driver = new ChromeDriver(chromeOptions);
+			//System.setProperty("webdriver.chrome.driver", "driver//chromedriver.exe");
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("disable-infobars");
+			options.addArguments("--headless");
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver(options);
 
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			System.setProperty("webdriver.edge.driver", "driver//msedgedriver.exe");
