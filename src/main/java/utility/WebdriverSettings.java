@@ -56,7 +56,7 @@ public class WebdriverSettings {
 			//System.setProperty("webdriver.chrome.driver", "driver//chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("disable-infobars");
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver(options);
 
