@@ -30,7 +30,7 @@ public class TestRunner {
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
  
-    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features",invocationCount=15)
+    @Test(groups = "cucumber", description = "Runs Cucumber Feature", dataProvider = "features",invocationCount=5)
     public void feature(CucumberFeatureWrapper cucumberFeature) {
         testNGCucumberRunner.runCucumber(cucumberFeature.getCucumberFeature());
     }

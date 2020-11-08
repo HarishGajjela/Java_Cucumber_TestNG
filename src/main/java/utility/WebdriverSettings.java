@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterClass;
@@ -42,6 +43,7 @@ public class WebdriverSettings {
 
 		if (browser.equalsIgnoreCase("FF")) {
 			System.setProperty("webdriver.firefox.driver", "driver//firefoxdriver.exe");
+
 			driver = new FirefoxDriver();
 
 		} else if (browser.equalsIgnoreCase("IE")) {
@@ -50,7 +52,10 @@ public class WebdriverSettings {
 
 		} else if (browser.equalsIgnoreCase("Chrome")) {
 			System.setProperty("webdriver.chrome.driver", "driver//chromedriver.exe");
-			driver = new ChromeDriver();
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--headless");
+			driver = new ChromeDriver(chromeOptions);
+
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			System.setProperty("webdriver.edge.driver", "driver//msedgedriver.exe");
 			driver = new ChromeDriver();
